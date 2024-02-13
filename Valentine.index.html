@@ -5,65 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Will You Be My Valentine?</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
+/* Default styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.love-container {
+    position: relative;
+}
+
+.heart-img {
+    width: 60%; /* Adjust the size of the heart image */
+    max-width: 400px; /* Set a maximum width */
+    animation: bounce 2s infinite; /* Apply bouncing animation */
+}
+
+.love-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3vw; /* Adjust font size relative to viewport width */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 0; /* Reset padding */
+    border: none; /* Remove border */
+    background: none; /* Remove background */
+    cursor: pointer;
+    animation: bounce 2s infinite; /* Apply bouncing animation to buttons */
+}
+
+/* Adjust size of yes and no buttons */
+button img {
+    width: 100px; /* Adjust the width of the button images for desktop screens */
+}
+
+/* Add margin between buttons */
+#yesBtn {
+    margin-right: 20px; /* Adjust margin between buttons */
+}
+
+/* Define bouncing animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
-    .love-container {
-        position: relative;
+    50% {
+        transform: translateY(-20px);
     }
+}
+
+/* Styling for "Yes" response */
+#response.yes {
+    color: #F44336; /* Green color */
+    font-size: 1vw; /* Adjust font size relative to viewport width */
+    font-weight: bold; /* Bold text */
+}
+
+/* Styling for "No" response */
+#response.no {
+    color: #F44336; /* Red color */
+    font-size: 1vw; /* Adjust font size relative to viewport width */
+    font-weight: bold; /* Bold text */
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
     .heart-img {
-        width: 400px; /* Increase the size of the heart image */
-        animation: bounce 2s infinite; /* Apply bouncing animation */
+        width: 80%; /* Adjust the size of the heart image on small screens */
     }
+
     .love-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 24px;
+        font-size: 5vw; /* Adjust font size relative to viewport width on small screens */
     }
-    .buttons {
-        margin-top: 20px;
+
+    button img {
+        width: 70px; /* Further adjust the width of the button images on small screens */
     }
-    button {
-        padding: 0; /* Reset padding */
-        border: none; /* Remove border */
-        background: none; /* Remove background */
-        cursor: pointer;
-        animation: bounce 2s infinite; /* Apply bouncing animation to buttons */
-    }
-    /* Add margin between buttons */
+
     #yesBtn {
-        margin-right: 40px;
+        margin-right: 10px; /* Further adjust margin between buttons on small screens */
     }
-    /* Define bouncing animation */
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-    }
-    /* Styling for "Yes" response */
-    #response.yes {
-        color: #F44336; /* Green color */
-        font-size: 28px; /* Larger font size */
-        font-weight: bold; /* Bold text */
-    }
-    /* Styling for "No" response */
-    #response.no {
-        color: #F44336; /* Red color */
-        font-size: 28px; /* Larger font size */
-        font-weight: bold; /* Bold text */
-    }
+}
+
 </style>
 </head>
 <body>
