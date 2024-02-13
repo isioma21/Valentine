@@ -52,11 +52,6 @@ button img {
     width: 100px; /* Adjust the width of the button images for desktop screens */
 }
 
-/* Add margin between buttons */
-#yesBtn {
-    margin-right: 20px; /* Adjust margin between buttons */
-}
-
 /* Define bouncing animation */
 @keyframes bounce {
     0%, 100% {
@@ -70,23 +65,17 @@ button img {
 /* Styling for "Yes" response */
 #response.yes {
     color: #F44336; /* Green color */
-    font-size: 2vw; /* Adjust font size relative to viewport width */
     font-weight: bold; /* Bold text */
 }
 
 /* Styling for "No" response */
 #response.no {
     color: #F44336; /* Red color */
-    font-size: 2vw; /* Adjust font size relative to viewport width */
     font-weight: bold; /* Bold text */
 }
 
 /* Media query for small screens */
 @media screen and (max-width: 768px) {
-    .heart-img {
-        width: 80%; /* Adjust the size of the heart image on small screens */
-    }
-
     .love-content {
         font-size: 5vw; /* Adjust font size relative to viewport width on small screens */
     }
@@ -97,6 +86,11 @@ button img {
 
     #yesBtn {
         margin-right: 10px; /* Further adjust margin between buttons on small screens */
+    }
+
+    /* Adjust font size for response on small screens */
+    #response.yes, #response.no {
+        font-size: 5vw; /* Adjust font size relative to viewport width on small screens */
     }
 }
 
