@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .love-container {
+        position: relative;
+    }
+    .heart-img {
+        width: 400px; /* Increase the size of the heart image */
+        animation: bounce 2s infinite; /* Apply bouncing animation */
+    }
+    .love-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 24px;
+    }
+    .buttons {
+        margin-top: 20px;
+    }
+    button {
+        padding: 0; /* Reset padding */
+        border: none; /* Remove border */
+        background: none; /* Remove background */
+        cursor: pointer;
+        animation: bounce 2s infinite; /* Apply bouncing animation to buttons */
+    }
+    /* Add margin between buttons */
+    #yesBtn {
+        margin-right: 40px;
+    }
+    /* Define bouncing animation */
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    /* Styling for "Yes" response */
+    #response.yes {
+        color: #F44336; /* Green color */
+        font-size: 28px; /* Larger font size */
+        font-weight: bold; /* Bold text */
+    }
+    /* Styling for "No" response */
+    #response.no {
+        color: #F44336; /* Red color */
+        font-size: 28px; /* Larger font size */
+        font-weight: bold; /* Bold text */
+    }
+</style>
+</head>
+<body>
+
+<div class="love-container">
+    <img class="heart-img" src="heart.png" alt="Heart">
+    <div class="buttons">
+        <button id="yesBtn"><img src="Yes.png" alt="Yes"></button>
+        <button id="noBtn"><img src="No.png" alt="No"></button>
+    </div>
+    <div id="response"></div>
+</div>
+
+<script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const responseDiv = document.getElementById('response');
+
+    yesBtn.addEventListener('click', () => {
+        responseDiv.textContent = "Yipppeeee!!!! I just want you to know that you are loved and cherished ❤️";
+        responseDiv.className = 'yes'; // Apply 'yes' class for styling
+    });
+
+    noBtn.addEventListener('click', () => {
+        responseDiv.textContent = "I would always love you still ❤️";
+        responseDiv.className = 'no'; // Apply 'no' class for styling
+    });
+</script>
+</body>
+</html>
